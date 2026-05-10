@@ -1,135 +1,436 @@
-spotify_to_ytmusic
-####################
+<div align="center">
 
-.. |pypi-downloads| image:: https://img.shields.io/pypi/dm/spotify_to_ytmusic?style=flat-square
-    :alt: PyPI Downloads
-    :target: https://pypi.org/project/spotify_to_ytmusic/
+<img width="220" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Youtube_Music_icon.svg" />
 
-.. |discuss| image:: https://img.shields.io/github/discussions/sigma67/spotify_to_ytmusic?style=flat-square
-   :alt: Ask questions at Discussions
-   :target: https://github.com/sigma67/spotify_to_ytmusic/discussions
+# 🎵 Spotify to YTMusic
 
-.. |code-coverage| image:: https://img.shields.io/codecov/c/github/sigma67/spotify_to_ytmusic?style=flat-square
-    :alt: Code coverage
-    :target: https://codecov.io/gh/sigma67/spotify_to_ytmusic
+### Herramienta CLI para transferir playlists de Spotify a YouTube Music 🚀
 
-.. |latest-release| image:: https://img.shields.io/github/v/release/sigma67/spotify_to_ytmusic?style=flat-square
-    :alt: Latest release
-    :target: https://github.com/sigma67/spotify_to_ytmusic/releases/latest
+<p align="center">
+  <b>Spotify to YTMusic</b> es una utilidad de línea de comandos desarrollada en Python que permite migrar playlists, canciones favoritas y bibliotecas musicales desde Spotify hacia YouTube Music de forma rápida y automatizada.
+</p>
 
-.. |commits-since-latest| image:: https://img.shields.io/github/commits-since/sigma67/spotify_to_ytmusic/latest?style=flat-square
-    :alt: Commits since latest release
-    :target: https://github.com/sigma67/spotify_to_ytmusic/commits
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-CLI%20Tool-3776AB?style=for-the-badge&logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/Spotify-Migration-1DB954?style=for-the-badge&logo=spotify">
+  <img src="https://img.shields.io/badge/YouTube%20Music-Transfer-red?style=for-the-badge&logo=youtube">
+  <img src="https://img.shields.io/badge/Open%20Source-Automation-success?style=for-the-badge">
+</p>
 
+<p align="center">
+  <a href="#-preview">Preview</a> •
+  <a href="#-características">Características</a> •
+  <a href="#-comandos-disponibles">Comandos</a> •
+  <a href="#-tecnologías-utilizadas">Tecnologías</a> •
+  <a href="#-instalación">Instalación</a>
+</p>
 
-|pypi-downloads| |discuss| |code-coverage| |latest-release| |commits-since-latest|
+</div>
 
-A simple command line script to clone a Spotify playlist to YouTube Music.
+---
 
-- Transfer a single Spotify playlist
-- Like all the songs in a Spotify playlist
-- Update a transferred playlist on YouTube Music
-- Transfer all playlists for a Spotify user
-- Like all songs from all playlists for a Spotify user
-- Remove playlists from YouTube Music
+# 🌌 Acerca de Spotify to YTMusic
 
+**Spotify to YTMusic** es una herramienta diseñada para facilitar la migración de contenido musical entre Spotify y YouTube Music utilizando automatización mediante APIs oficiales.
 
-Install
--------
+La herramienta permite:
 
-- Python 3.10 or later - https://www.python.org
-- pipx - https://pipx.pypa.io
+- 🎵 Transferir playlists
+- ❤️ Migrar canciones favoritas
+- ☁️ Sincronizar bibliotecas musicales
+- 🔄 Actualizar playlists automáticamente
+- 📚 Transferir todas las playlists de un usuario
+- 🗑️ Eliminar playlists en YouTube Music
 
-.. code-block::
+El proyecto está orientado al aprendizaje y práctica de:
 
-    pipx ensurepath
+- Python Automation
+- CLI Development
+- APIs REST
+- OAuth Authentication
+- Music Automation
+- Data Migration
+- YouTube Music API
 
-- Open a new shell. Install:
+---
 
-.. code-block::
+# 📸 Preview
 
-    pipx install spotify_to_ytmusic
+<div align="center">
 
+<img src="https://raw.githubusercontent.com/sigma67/spotify_to_ytmusic/master/docs/demo.png" width="900"/>
 
-Setup
--------
+</div>
 
-1. Generate a new app at https://developer.spotify.com/dashboard
-2. Generate a new app by following instructions at https://ytmusicapi.readthedocs.io/en/stable/setup/oauth.html
-3. Run
+---
 
-.. code-block::
+# ✨ Características
 
-    spotify_to_ytmusic setup
+# 🎵 Transferencia Musical
 
-For backwards compatibility you can also create your own file and pass it using ``--file settings.ini``.
+- 🔄 Transferir playlists Spotify → YouTube Music
+- ❤️ Migrar canciones favoritas
+- 📚 Transferir playlists completas
+- ☁️ Sincronización automática
+- ⚡ Procesamiento rápido
 
-If you want to transfer private playlists from Spotify (i.e. liked songs), choose "yes" for oAuth authentication, otherwise choose "no".
-For oAuth authentication you should set ``https://127.0.0.1`` as redirect URI for your app in Spotify's developer dashboard.
+---
 
-Usage
-------
+## 👤 Gestión de Usuarios
 
-After you've completed setup, you can simply run the script from the command line using:
+- 🎧 Migración de playlists públicas
+- 🔐 Soporte OAuth Spotify
+- ❤️ Importación de Liked Songs
+- 🌎 Gestión de múltiples playlists
 
-.. code-block::
+---
 
-    spotify_to_ytmusic create <spotifylink>
+## 🔥 Automatización
 
-where ``<spotifylink>`` is a link like https://open.spotify.com/playlist/0S0cuX8pnvmF7gA47Eu63M
+- ⚡ Actualización automática de playlists
+- 🔄 Sincronización incremental
+- 🗑️ Eliminación automática
+- 📊 Logs detallados
+- 📄 Exportación de canciones no encontradas
 
-The script will log its progress and output songs that were not found in YouTube Music to **noresults_youtube.txt**.
+---
 
-Transfer all playlists of a Spotify user
-----------------------------------------
+## 📱 Herramienta CLI
 
-For migration purposes, it is possible to transfer all public playlists of a user by using the Spotify user's ID (unique username).
+- 💻 Línea de comandos moderna
+- ⚡ Fácil de usar
+- 🎵 Integración APIs musicales
+- 📦 Instalación rápida
+- 🔧 Configuración flexible
 
-.. code-block::
+---
 
-    spotify_to_ytmusic all <spotifyuserid>
+# 🌐 Integración Spotify & YouTube Music
 
-Transfer liked tracks of the Spotify user
------------------------------------------
+## 🎧 Plataformas compatibles
 
-**You must use oAuth authentication for transferring liked songs.**
+- 💚 Spotify
+- ▶️ YouTube Music
 
-.. code-block::
+---
 
-   spotify_to_ytmusic liked
+## 🔐 Autenticación
 
-This command will open browser where you should give access to your account (if you haven't done that before).
-After authorization you will be redirected to 127.0.0.1, copy link you were redirected to (looks like 127.0.0.1/?code=...) and paste to command line.
+La herramienta soporta:
 
-Command line options
----------------------
+- Spotify OAuth
+- YouTube OAuth
+- Private playlists
+- Liked songs access
+- API credentials
 
-There are some additional command line options for setting the playlist name and determining whether it's public or not. To view them, run
+---
 
-.. code::
+# 🛠️ Tecnologías Utilizadas
 
-    spotify_to_ytmusic -h
+## 🐍 Backend & CLI
 
+<p>
+  <img src="https://skillicons.dev/icons?i=python" />
+</p>
 
-To view subcommand help, run i.e.
+- Python 3.10+
+- CLI scripting
+- OAuth Authentication
+- REST APIs
 
-.. code-block::
+---
 
-    spotify_to_ytmusic setup -h
+## ⚙️ Librerías y Herramientas
 
+<p>
+  <img src="https://skillicons.dev/icons?i=git,github" />
+</p>
 
-Available subcommands:
+### Dependencias principales
 
-.. code-block::
+- ytmusicapi
+- requests
+- Spotify Web API
+- argparse
+- OAuth libraries
 
-    positional arguments:
-      {setup,create,update,remove,all}
-                            Provide a subcommand
-        setup               Set up credentials
-        create              Create a new playlist on YouTube Music.
-        update              Delete all entries in the provided Google Play Music playlist and update the playlist with entries from the Spotify playlist.
-        remove              Remove playlists with specified regex pattern.
-        all                 Transfer all public playlists of the specified user (Spotify User ID).
+---
 
-    options:
-      -h, --help            show this help message and exit
+# 📂 Estructura del Proyecto
+
+```bash
+spotify_to_ytmusic/
+│
+├── spotify_to_ytmusic/      # Código principal
+├── docs/                    # Documentación
+├── tests/                   # Pruebas
+├── settings.ini             # Configuración
+├── requirements.txt
+├── pyproject.toml
+└── README.md
+```
+
+---
+
+# ⚡ Instalación
+
+## 1️⃣ Instalar Python
+
+Requiere:
+
+```bash
+Python 3.10+
+```
+
+---
+
+## 2️⃣ Instalar pipx
+
+```bash
+pip install pipx
+```
+
+---
+
+## 3️⃣ Configurar entorno
+
+```bash
+pipx ensurepath
+```
+
+---
+
+## 4️⃣ Instalar herramienta
+
+```bash
+pipx install spotify_to_ytmusic
+```
+
+---
+
+# 🔐 Configuración
+
+## 1️⃣ Crear App Spotify
+
+Ir a:
+
+```bash
+https://developer.spotify.com/dashboard
+```
+
+---
+
+## 2️⃣ Configurar YouTube Music API
+
+Seguir instrucciones de:
+
+```bash
+https://ytmusicapi.readthedocs.io/en/stable/setup/oauth.html
+```
+
+---
+
+## 3️⃣ Ejecutar setup
+
+```bash
+spotify_to_ytmusic setup
+```
+
+---
+
+## 4️⃣ Configurar Redirect URI
+
+Usar:
+
+```txt
+https://127.0.0.1
+```
+
+---
+
+# 🚀 Uso Básico
+
+## 🎵 Transferir playlist
+
+```bash
+spotify_to_ytmusic create <spotifylink>
+```
+
+Ejemplo:
+
+```bash
+spotify_to_ytmusic create https://open.spotify.com/playlist/xxxxx
+```
+
+---
+
+## ❤️ Transferir canciones favoritas
+
+```bash
+spotify_to_ytmusic liked
+```
+
+---
+
+## 📚 Transferir todas las playlists
+
+```bash
+spotify_to_ytmusic all <spotifyuserid>
+```
+
+---
+
+## 🔄 Actualizar playlist existente
+
+```bash
+spotify_to_ytmusic update
+```
+
+---
+
+## 🗑️ Eliminar playlists
+
+```bash
+spotify_to_ytmusic remove
+```
+
+---
+
+# 🎛️ Comandos Disponibles
+
+## 📦 Subcomandos CLI
+
+```bash
+setup       # Configurar credenciales
+create      # Crear playlist
+update      # Actualizar playlist
+remove      # Eliminar playlists
+all         # Transferir todas las playlists
+liked       # Transferir liked songs
+```
+
+---
+
+# 🔥 Funcionalidades Técnicas
+
+## 🌐 APIs Integradas
+
+- Spotify Web API
+- YouTube Music API
+- OAuth Authentication
+- Playlist synchronization
+
+---
+
+## ⚡ Sistema CLI
+
+- Argument parsing
+- Config files
+- Command automation
+- Progress logging
+
+---
+
+## 📊 Gestión de Datos
+
+- Playlist migration
+- Song matching
+- Duplicate handling
+- Error reporting
+
+---
+
+# 🧠 Objetivos del Proyecto
+
+## 🎯 Aprender y practicar
+
+- Python CLI
+- APIs REST
+- OAuth Authentication
+- Automatización musical
+- Data migration
+- Python scripting
+- Music platform integration
+- Herramientas Open Source
+
+---
+
+# 📊 Roadmap
+
+## 🚧 Próximamente
+
+- 🎵 Sync bidireccional
+- ☁️ Cloud backup
+- ❤️ Auto-liked sync
+- 📱 Interfaz gráfica GUI
+- 🔥 Smart matching IA
+- ⚡ Multi-thread processing
+- 📊 Dashboard estadísticas
+- 🚀 Optimización avanzada
+
+---
+
+# 🤝 Contribuciones
+
+Las contribuciones son bienvenidas ❤️
+
+## Cómo contribuir
+
+1. Haz Fork del proyecto
+2. Crea una rama
+
+```bash
+git checkout -b feature/nueva-funcion
+```
+
+3. Realiza cambios
+4. Haz commit
+
+```bash
+git commit -m "✨ Nueva funcionalidad"
+```
+
+5. Haz push
+
+```bash
+git push origin feature/nueva-funcion
+```
+
+6. Abre un Pull Request 🚀
+
+---
+
+# 👨‍💻 Autor
+
+<div align="center">
+
+## sigma67
+
+Developer enfocado en automatización, herramientas CLI y migración de plataformas musicales.
+
+</div>
+
+---
+
+# 🌟 Apoya el Proyecto
+
+Si te gusta Spotify to YTMusic:
+
+⭐ Dale una estrella al repositorio  
+🍴 Haz Fork del proyecto  
+📢 Compártelo con otros desarrolladores
+
+---
+
+# 📜 Licencia
+
+Proyecto Open Source desarrollado para automatización y migración de contenido musical.
+
+---
+
+<div align="center">
+
+### 🎵 Spotify to YTMusic — Migra tu música entre plataformas fácilmente.
+
+</div>
