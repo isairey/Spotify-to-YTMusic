@@ -1,0 +1,53 @@
+name: Code coverage
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - spotify_to_ytmusic/**
+      - tests/**
+  pull_request_target:
+    paths:
+      - spotify_to_ytmusic/**
+      - tests/**
+
+env:
+  XDG_CACHE_HOME: .cache
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+    - name: Setup PDM
+      uses: pdm-project/setup-pdm@v4
+    - name: Install dependencies
+      run: pdm install -G test
+    - name: Generate coverage report
+      env:
+        SETTINGS_INI: ${{ secrets.SETTINGS_INI }}
+        SPOTIPY_CACHE: ${{ secrets.SPOTIPY_CACHE }}
+      run: |
+        mkdir -p $XDG_CACHE_HOME/spotify_to_ytmusic
+        cat <<< "$SETTINGS_INI" > $XDG_CACHE_HOME/spotify_to_ytmusic/settings.ini
+        cat <<< "$SPOTIPY_CACHE" > $XDG_CACHE_HOME/spotify_to_ytmusic/spotipy.cache
+        pdm run pytest --junitxml=test-results.xml
+        pdm run coverage xml
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v5
+      if: ${{ !cancelled() }}
+      with:
+        flags: unittests
+        fail_ci_if_error: true
+        token: ${{ secrets.CODECOV_TOKEN }}
+    - name: Upload test results to Codecov
+      if: ${{ !cancelled() }}
+      uses: codecov/test-results-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: test-results.xml

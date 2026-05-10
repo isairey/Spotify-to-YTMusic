@@ -1,0 +1,11 @@
+[youtube]
+headers = headers_json_from_browser
+user_id = 
+auth_type = browser
+client_id =
+client_secret =
+
+[spotify]
+client_id = id_from_developer_console
+client_secret = secret_from_developer_console
+use_oauth = False
