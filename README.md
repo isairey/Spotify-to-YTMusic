@@ -397,7 +397,7 @@ git push origin feature/nueva-funcion
 
 <div align="center">
 
-## sigma67
+## Isai Reyes
 
 Developer enfocado en automatización, herramientas CLI y migración de plataformas musicales.
 
