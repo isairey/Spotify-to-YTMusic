@@ -52,15 +52,7 @@ El proyecto está orientado al aprendizaje y práctica de:
 - Data Migration
 - YouTube Music API
 
----
 
-# 📸 Preview
-
-<div align="center">
-
-<img src="https://raw.githubusercontent.com/sigma67/spotify_to_ytmusic/master/docs/demo.png" width="900"/>
-
-</div>
 
 ---
 
